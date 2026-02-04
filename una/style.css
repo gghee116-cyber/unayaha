@@ -1,0 +1,173 @@
+.cake-container svg #flame {
+  filter: drop-shadow(0 0 16px #ffd70088);
+  transition: transform 0.2s, filter 0.2s;
+}
+.cake-container svg #candle:hover + #flame {
+  filter: drop-shadow(0 0 32px #ffd700cc);
+}
+.cake-container svg #candle {
+  cursor: pointer;
+}
+#Cupcake container for SVG
+.cake-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+@keyframes fuego {
+  0%, 100% {
+    background: rgba(254, 248, 97, 0.5);
+    box-shadow: 0 0 40px 10px rgba(239, 218, 185, 0.2);
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    background: rgba(255, 50, 0, 0.1);
+    box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+    transform: translateY(-20px) scale(0);
+  }
+}
+
+@keyframes in {
+  to {
+    transform: translateY(0);
+  }
+}
+/* ===== Birthday Fragments (for dropFragments) ===== */
+.fragment {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  will-change: transform, opacity;
+  animation: fragment-fall var(--dur, 4s) cubic-bezier(0.6,0.2,0.4,1) forwards;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+@keyframes fragment-fall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) translateX(var(--drift, 0px)) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+body {
+  background-color: #d7c2da;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  margin-top: 20px;
+  color: #8e6fc4;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 12px #cbb7e6, 0 1px 0 #fff, 0 0px 20px #bba0e3;
+  opacity: 0;
+  animation: h1-fade-in 1.2s ease 0.2s forwards;
+  transition: opacity 1s;
+}
+
+@keyframes h1-fade-in {
+  from { opacity: 0; transform: translateY(-30px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+    h2 {
+        color: #efe3f1;
+        font-size: 1.5rem;
+        margin-top: 8px;
+        margin-bottom: 0;
+    }
+    
+    p {
+        color: #efe3f1;
+    }
+
+    .btn, .gamble-btn {
+      padding: 18px 44px;
+      font-size: 1.25rem;
+      border: none;
+      border-radius: 32px;
+      cursor: pointer;
+      background: linear-gradient(120deg, #b48cae 0%, #c9a3b6 100%);
+      color: #fff;
+      font-weight: 500;
+      letter-spacing: 1px;
+      box-shadow: 0 8px 24px 0 rgba(100, 60, 100, 0.18);
+      transition: box-shadow 0.2s, background 0.2s, transform 0.2s;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .btn:hover, .gamble-btn:hover {
+      box-shadow: 0 12px 32px 0 rgba(100, 60, 100, 0.3);
+      background: linear-gradient(120deg, #c9a3b6 0%, #b48cae 100%);
+      transform: scale(1.08);
+    }
+
+
+.buttons {
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+}
+
+.gambling {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.slot-row {
+  display: flex;
+  justify-content: center;
+  gap: 2.5em;
+  margin-bottom: 18px;
+}
+.slot-box {
+  font-size: 2.7rem;
+  min-width: 2.5em;
+  min-height: 2.5em;
+  background: linear-gradient(120deg, #b48cae 0%, #c9a3b6 100%);
+  border-radius: 1.5em;
+  box-shadow: 0 4px 18px 0 rgba(100, 60, 100, 0.13);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 2px;
+  color: #fff;
+  transition: box-shadow 0.2s, background 0.2s, transform 0.2s;
+  border: 2px solid #c9a3b6;
+}
+.slot-win {
+  background: #e9d6fa ;
+  box-shadow: 0 0 18px 4px #cbb7e6, 0 0 0 2px #a678b4;
+  transform: scale(1.18) rotate(-3deg);
+  color: #a678b4;
+}
+#slot-result {
+  font-size: 1.5rem;
+  color: #d0acda;
+  min-height: 1.5em;
+  margin-top: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
